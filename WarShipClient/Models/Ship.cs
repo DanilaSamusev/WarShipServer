@@ -1,14 +1,17 @@
 namespace WarShipClient.Models
 {
     public class Ship
-    {
-        public string Condition { get; set; }        
+    {       
         public Deck[] Decks { get; set; }
         
-        public Ship(string condition, Deck[] decks)
+        public Ship(int decksCount)
         {
-            Condition = condition;
-            Decks = decks;
+            Decks = new Deck[decksCount];
+
+            for (int i = 0; i < Decks.Length; i++)
+            {
+                Decks[i] = new Deck(0);
+            }           
         }
         
     }

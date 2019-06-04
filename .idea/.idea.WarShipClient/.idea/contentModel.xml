@@ -15,7 +15,6 @@
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="GameController.cs" t="Include" />
-          <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Deck.cs" t="Include" />
@@ -37,6 +36,7 @@
         </e>
         <e p="Services" t="Include">
           <e p="ShipFactory.cs" t="Include" />
+          <e p="ShipsAligner.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="WarShipClient.csproj" t="IncludeRecursive" />

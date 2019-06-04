@@ -6,15 +6,28 @@ namespace WarShipClient.Models
     {
         public string Condition { get; set; }
         public int LiveDecksCount { get; set; }
-        public Ship[] Ships { get; set; }
-        private readonly ShipFactory _shipFactory;
+        public Ship[] Ships { get; set; }       
+        private readonly ShipsAligner _aligner;
         
-        public Fleet(ShipFactory factory, Field field)
-        {
-            _shipFactory = factory;
-            Ships = _shipFactory.CreateShips(field.Squares);
+        public Fleet(ShipsAligner aligner)
+        {         
+            _aligner = aligner;
+            Ships = new[]
+            {
+                new Ship(1),
+                new Ship(1),
+                new Ship(1),
+                new Ship(1),
+                new Ship(2),
+                new Ship(2),
+                new Ship(2),
+                new Ship(3),
+                new Ship(3),
+                new Ship(4)
+            };            
             LiveDecksCount = 4;
             Condition = "Alive";
+            _aligner.AlignShips(Ships);
         }
         
         

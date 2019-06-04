@@ -24,6 +24,7 @@ namespace WarShipClient
             services.AddSingleton<Field>();
             services.AddSingleton<ShipFactory>();          
             services.AddSingleton<Fleet>();
+            services.AddSingleton<ShipsAligner>();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials(); }));
         }
