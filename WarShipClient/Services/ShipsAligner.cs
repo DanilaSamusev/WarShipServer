@@ -8,15 +8,14 @@ namespace WarShipClient.Services
         private static Field Field;
         private static Ship[] Ships;
 
-        public ShipsAligner(Field field)
+        public ShipsAligner(Field field, Fleet fleet)
         {
             Field = field;
+            Ships = fleet.Ships;
         }
 
-        public void AlignShips(Ship[] ships)
-        {
-            Ships = ships;
-
+        public void AlignShips()
+        {           
             Random random = new Random();
 
             for (int i = 0; i < 10;)

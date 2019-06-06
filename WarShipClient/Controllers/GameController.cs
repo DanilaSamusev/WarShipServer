@@ -10,27 +10,29 @@ namespace WarShipClient.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {        
-        private static Field Field { get; set; }
+        private static Field ComputerField { get; set; }
+        private static Field PlayerField { get; set; }
         private static Fleet Fleet { get; set; }
         
         public GameController(Field field, Fleet fleet)
-        {            
-            Field = field;
+        {           
             Fleet = fleet;
+            ComputerField = Models.ComputerField.NewComputerField(Fleet);
+            PlayerField =  new Field(); 
         }
               
         [HttpGet]
         public IActionResult GetField()
         {          
-            return Ok(Field);
+            return Ok(new {ComputerField, PlayerField});
         }
 
         [HttpPut]
         public IActionResult UpdateSquare([FromBody] Square square)
         {
-            Field.Squares[square.Id].IsClicked = true;
-            Console.WriteLine(Field.Squares[square.Id].IsClicked);
-            return Ok(Field.Squares[square.Id]);
+            ComputerField.Squares[square.Id].IsClicked = true;
+            Console.WriteLine(ComputerField.Squares[square.Id].IsClicked);
+            return Ok(ComputerField.Squares[square.Id]);
         }
     }
 }

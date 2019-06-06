@@ -7,11 +7,9 @@ namespace WarShipClient.Models
         public string Condition { get; set; }
         public int LiveDecksCount { get; set; }
         public Ship[] Ships { get; set; }       
-        private readonly ShipsAligner _aligner;
-        
-        public Fleet(ShipsAligner aligner)
-        {         
-            _aligner = aligner;
+                
+        public Fleet()
+        {                   
             Ships = new[]
             {
                 new Ship(1),
@@ -26,8 +24,7 @@ namespace WarShipClient.Models
                 new Ship(4)
             };            
             LiveDecksCount = 4;
-            Condition = "Alive";
-            _aligner.AlignShips(Ships);
+            Condition = "Alive";            
         }
         
         
