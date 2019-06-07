@@ -15,7 +15,7 @@ namespace WarShipClient.Services
         }
 
         public void AlignShips()
-        {           
+        {
             Random random = new Random();
 
             for (int i = 0; i < 10;)
@@ -37,7 +37,7 @@ namespace WarShipClient.Services
                 {
                     for (int j = 0; j < points.Length; j++)
                     {
-                        SetDeck(i, j, points[j]);
+                        SetShip(Ships[i], points);
                     }
 
                     i++;
@@ -45,9 +45,17 @@ namespace WarShipClient.Services
             }
         }
 
-        private void SetDeck(int i, int deckNumber, int point)
+        public void SetShip(Ship ship, int[] points)
         {
-            Ships[i].Decks[deckNumber].Position = point;
+            for (int i = 0; i < points.Length; i++)
+            {
+                SetDeck(ship.Decks[i], points[i]);
+            }
+        }
+
+        private void SetDeck(Deck deck, int point)
+        {
+            deck.Position = point;
             Field.Squares[point].HasShip = true;
         }
 
@@ -59,14 +67,12 @@ namespace WarShipClient.Services
                 {
                     return false;
                 }
-                                
             }
 
             if (direction == 0)
             {
-
                 int rowNumber = points[0] / 10;
-                
+
                 foreach (int point in points)
                 {
                     if (point / 10 != rowNumber)
