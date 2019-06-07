@@ -38,7 +38,6 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
-          <e p="ShipFactory.cs" t="Include" />
           <e p="ShipsAligner.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />

@@ -51,7 +51,7 @@ namespace WarShipClient.Services
             Field.Squares[point].HasShip = true;
         }
 
-        private bool CheckPoints(int[] points, int direction)
+        public static bool CheckPoints(int[] points, int direction)
         {
             foreach (int point in points)
             {
@@ -79,7 +79,7 @@ namespace WarShipClient.Services
             return true;
         }
 
-        private bool CheckPoint(int point)
+        public static bool CheckPoint(int point)
         {
             int[] points =
             {

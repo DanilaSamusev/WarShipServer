@@ -21,8 +21,7 @@ namespace WarShipClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSingleton<Field>();
-            services.AddSingleton<ShipFactory>();          
+            services.AddSingleton<Field>();            
             services.AddSingleton<Fleet>();
             services.AddSingleton<ShipsAligner>();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
