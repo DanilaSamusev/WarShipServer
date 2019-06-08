@@ -11,7 +11,7 @@ namespace WarShipClient.Controllers
     public class PlayerFieldController : Controller
     {
         private static Field PlayerField { get; set; }
-        private static int _decksOnBoard;
+        private static int _shipsOnBoard;
 
         public PlayerFieldController()
         {
@@ -27,26 +27,28 @@ namespace WarShipClient.Controllers
         [HttpPut]
         public IActionResult UpdateField([FromBody] Square square)
         {
+            ShipsAligner shipsAligner = new ShipsAligner(PlayerField, Models.PlayerField.Fleet);
 
-            
-            
-            if (_decksOnBoard < 4)
+            if (_shipsOnBoard < 4)
             {
-                
+                int[] points = shipsAligner.GetPoints(Models.PlayerField.Fleet.Ships[0], square.Id, 0);
+
+                foreach (int point in points)
+                {
+                    PlayerField.Squares[point].IsChecked = !PlayerField.Squares[point].IsChecked;
+                }
             }
-            
-            PlayerField.Squares[square.Id].IsChecked = !PlayerField.Squares[square.Id].IsChecked;
 
             return Ok(PlayerField.Squares[square.Id]);
         }
 
-        
+
         public IActionResult HandleClick([FromBody] Square square)
         {
-            if (_decksOnBoard < 4)
+            if (_shipsOnBoard < 4)
             {
                 PlayerField.Squares[square.Id].HasShip = true;
-                _decksOnBoard++;
+                _shipsOnBoard++;
             }
 
             return Ok(PlayerField);

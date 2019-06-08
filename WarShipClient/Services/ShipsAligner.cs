@@ -30,12 +30,19 @@ namespace WarShipClient.Services
             }
         }
 
-        public bool SetShip(Ship ship, int point, int direction)
+        public int[] GetPoints(Ship ship, int point, int direction)
         {
             int[] points = new int[ship.Decks.Length];
             points[0] = point;
             FillPoints(points, direction);
 
+            return points;
+        }
+        
+        public bool SetShip(Ship ship, int point, int direction)
+        {
+            int[] points = GetPoints(ship, point, direction);
+            
             if (CheckPoints(points, direction))
             {              
                     for (int i = 0; i < points.Length; i++)

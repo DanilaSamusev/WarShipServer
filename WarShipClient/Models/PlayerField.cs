@@ -2,15 +2,17 @@ namespace WarShipClient.Models
 {
     public class PlayerField : Field
     {
-        private static PlayerField field;        
+        private static PlayerField _field;
+        public static Fleet Fleet { get; set; }
 
         public static PlayerField NewPlayerField()
         {
-            if (field != null) return field;
+            if (_field != null) return _field;
             
-            field = new PlayerField();
+            Fleet = new Fleet();
+            _field = new PlayerField();
             
-            return field;
+            return _field;
         }        
     }
 }
