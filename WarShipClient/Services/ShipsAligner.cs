@@ -13,8 +13,8 @@ namespace WarShipClient.Services
             Field = field;
             Ships = fleet.Ships;
         }
-
-        public void AlignShips()
+               
+        public void AlignShipsRandom()
         {
             Random random = new Random();
 
@@ -45,6 +45,11 @@ namespace WarShipClient.Services
             }
         }
 
+        public void AlignShips()
+        {
+            
+        }
+        
         public void SetShip(Ship ship, int[] points)
         {
             for (int i = 0; i < points.Length; i++)

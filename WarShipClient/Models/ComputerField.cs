@@ -14,7 +14,7 @@ namespace WarShipClient.Models
             Fleet fleet = new Fleet();
             field = new ComputerField();
             _aligner = new ShipsAligner(field, fleet);
-            _aligner.AlignShips();
+            _aligner.AlignShipsRandom();
 
             return field;
         }

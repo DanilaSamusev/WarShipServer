@@ -11,7 +11,7 @@ namespace WarShipClient.Controllers
     public class PlayerFieldController : Controller
     {
         private static Field PlayerField { get; set; }
-        private static int DecksOnBoard;
+        private static int _decksOnBoard;
 
         public PlayerFieldController()
         {
@@ -24,6 +24,7 @@ namespace WarShipClient.Controllers
             return Ok(PlayerField);
         }
 
+        [HttpPut]
         public IActionResult UpdateField([FromBody] Square square)
         {
             PlayerField.Squares[square.Id].IsChecked = !PlayerField.Squares[square.Id].IsChecked;
@@ -34,10 +35,10 @@ namespace WarShipClient.Controllers
         
         public IActionResult HandleClick([FromBody] Square square)
         {
-            if (DecksOnBoard < 4)
+            if (_decksOnBoard < 4)
             {
                 PlayerField.Squares[square.Id].HasShip = true;
-                DecksOnBoard++;
+                _decksOnBoard++;
             }
 
             return Ok(PlayerField);
