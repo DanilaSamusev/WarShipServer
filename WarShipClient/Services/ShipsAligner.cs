@@ -5,15 +5,15 @@ namespace WarShipClient.Services
 {
     public class ShipsAligner
     {
-        private static Field Field;
-        private static Ship[] Ships;
+        private readonly Field _field;
+        private readonly Ship[] _ships;
 
         public ShipsAligner(Field field, Fleet fleet)
         {
-            Field = field;
-            Ships = fleet.Ships;
+            _field = field;
+            _ships = fleet.Ships;
         }
-               
+
         public void AlignShipsRandom()
         {
             Random random = new Random();
@@ -22,49 +22,50 @@ namespace WarShipClient.Services
             {
                 int point = random.Next(100);
                 int direction = random.Next(2);
-                int step = direction == 0 ? 1 : -10;
 
-                int[] points = new int[Ships[i].Decks.Length];
-
-                points[0] = point;
-
-                for (int j = 1; j < points.Length; j++)
+                if (SetShip(_ships[i], point, direction))
                 {
-                    points[j] = points[j - 1] + step;
-                }
-
-                if (CheckPoints(points, direction))
-                {
-                    for (int j = 0; j < points.Length; j++)
-                    {
-                        SetShip(Ships[i], points);
-                    }
-
                     i++;
                 }
             }
         }
 
-        public void AlignShips()
+        public bool SetShip(Ship ship, int point, int direction)
         {
-            
+            int[] points = new int[ship.Decks.Length];
+            points[0] = point;
+            FillPoints(points, direction);
+
+            if (CheckPoints(points, direction))
+            {              
+                    for (int i = 0; i < points.Length; i++)
+                    {
+                        SetDeck(ship.Decks[i], points[i]);
+                    }
+
+                    return true;           
+            }
+
+            return false;
         }
-        
-        public void SetShip(Ship ship, int[] points)
+
+        public void FillPoints(int[] points, int direction)
         {
-            for (int i = 0; i < points.Length; i++)
+            int step = direction == 0 ? 1 : -10;
+
+            for (int j = 1; j < points.Length; j++)
             {
-                SetDeck(ship.Decks[i], points[i]);
+                points[j] = points[j - 1] + step;
             }
         }
 
         private void SetDeck(Deck deck, int point)
         {
             deck.Position = point;
-            Field.Squares[point].HasShip = true;
+            _field.Squares[point].HasShip = true;
         }
 
-        public static bool CheckPoints(int[] points, int direction)
+        public bool CheckPoints(int[] points, int direction)
         {
             foreach (int point in points)
             {
@@ -90,7 +91,7 @@ namespace WarShipClient.Services
             return true;
         }
 
-        public static bool CheckPoint(int point)
+        public bool CheckPoint(int point)
         {
             int[] points =
             {
@@ -103,7 +104,7 @@ namespace WarShipClient.Services
             {
                 if (i >= 0 && i < 100)
                 {
-                    if (Field.Squares[i].HasShip)
+                    if (_field.Squares[i].HasShip)
                     {
                         return false;
                     }

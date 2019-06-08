@@ -27,6 +27,14 @@ namespace WarShipClient.Controllers
         [HttpPut]
         public IActionResult UpdateField([FromBody] Square square)
         {
+
+            
+            
+            if (_decksOnBoard < 4)
+            {
+                
+            }
+            
             PlayerField.Squares[square.Id].IsChecked = !PlayerField.Squares[square.Id].IsChecked;
 
             return Ok(PlayerField.Squares[square.Id]);
