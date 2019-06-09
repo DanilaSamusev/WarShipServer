@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WarShipClient.Models;
 using WarShipClient.Services;
 
@@ -11,7 +10,7 @@ namespace WarShipClient.Controllers
     public class PlayerFieldController : Controller
     {
         private static Field PlayerField { get; set; }
-        private static int _shipsOnBoard;
+        private static int _shipNumber = 4;
 
         public PlayerFieldController()
         {
@@ -28,28 +27,22 @@ namespace WarShipClient.Controllers
         public IActionResult UpdateField([FromBody] Square square)
         {
             ShipsAligner shipsAligner = new ShipsAligner(PlayerField, Models.PlayerField.Fleet);
+            Square[] squares = new Square[Models.PlayerField.Fleet.Ships[_shipNumber].Decks.Length];
+            int[] points = shipsAligner.GetPoints(Models.PlayerField.Fleet.Ships[_shipNumber], square.Id, 0);
 
-            if (_shipsOnBoard < 4)
+            for (int i = 0; i < points.Length; i++)
             {
-                int[] points = shipsAligner.GetPoints(Models.PlayerField.Fleet.Ships[0], square.Id, 0);
-
-                foreach (int point in points)
-                {
-                    PlayerField.Squares[point].IsChecked = !PlayerField.Squares[point].IsChecked;
-                }
+                PlayerField.Squares[points[i]].IsChecked = !PlayerField.Squares[points[i]].IsChecked;
+                squares[i] = PlayerField.Squares[points[i]];
             }
 
-            return Ok(PlayerField.Squares[square.Id]);
+            return Ok(squares);
         }
 
 
         public IActionResult HandleClick([FromBody] Square square)
         {
-            if (_shipsOnBoard < 4)
-            {
-                PlayerField.Squares[square.Id].HasShip = true;
-                _shipsOnBoard++;
-            }
+            
 
             return Ok(PlayerField);
         }
