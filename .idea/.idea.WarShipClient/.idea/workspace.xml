@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="231d3d6a-8c1e-4bfa-848e-dd5331a78bc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WarShipClient/Services/PointsChecker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WarShipClient/Services/PossiblePointsCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarShipClient/bin/Debug/netcoreapp2.2/WarShipClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/bin/Debug/netcoreapp2.2/WarShipClient.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarShipClient/bin/Debug/netcoreapp2.2/WarShipClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/bin/Debug/netcoreapp2.2/WarShipClient.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipClient/obj/Debug/netcoreapp2.2/WarShipClient.pdb" afterDir="false" />
     </list>
@@ -37,25 +42,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="104" />
+          <entry key="cs" value="108" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="104" />
+          <entry key="C#" value="108" />
           <entry key="JSON" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="7136" />
+          <entry key="cs" value="7321" />
           <entry key="json" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="7136" />
+          <entry key="C#" value="7321" />
           <entry key="JSON" value="21" />
         </counts>
       </usages-collector>
@@ -63,70 +68,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="594">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
-                <marker date="1560070786311" expanded="false" signature="6:89" ph="..." />
-                <marker date="1560070786311" expanded="true" signature="126:1448" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="267:1446" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="412:495" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="554:610" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="696:1301" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="1067:1258" ph="{...}" />
-                <marker date="1560070786311" expanded="true" signature="1370:1440" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WarShipClient/Models/PlayerField.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-              <folding>
-                <marker date="1559996410604" expanded="true" signature="30:427" ph="{...}" />
-                <marker date="1559996410604" expanded="true" signature="69:425" ph="{...}" />
-                <marker date="1559996410604" expanded="true" signature="218:411" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="32" column="64" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
-              <folding>
-                <marker date="1559996535155" expanded="false" signature="6:41" ph="..." />
-                <marker date="1559996535155" expanded="true" signature="75:3074" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="107:3072" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="247:329" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="369:711" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="459:701" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="626:687" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="780:957" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1031:1451" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1164:1414" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1252:1355" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1512:1712" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1624:1702" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1764:1869" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1931:2507" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="1983:2148" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2064:2134" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2181:2471" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2290:2457" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2357:2439" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2550:3066" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2600:2754" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2794:3030" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2847:3016" ph="{...}" />
-                <marker date="1559996535155" expanded="true" signature="2916:2998" ph="{...}" />
+                <marker date="1560083831399" expanded="false" signature="6:89" ph="..." />
+                <marker date="1560083831399" expanded="true" signature="126:1284" ph="{...}" />
+                <marker date="1560083831399" expanded="true" signature="267:1282" ph="{...}" />
+                <marker date="1560083831399" expanded="true" signature="400:477" ph="{...}" />
+                <marker date="1560083831399" expanded="true" signature="536:593" ph="{...}" />
+                <marker date="1560083831399" expanded="true" signature="679:1267" ph="{...}" />
+                <marker date="1560083831399" expanded="true" signature="1030:1224" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -148,6 +102,8 @@
     <setting file="file://$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/f7/ee7e7052/ControllerFactoryProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WarShipClient/Models/ComputerField.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WarShipClient/Services/PointsChecker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WarShipClient/Services/PossiblePointsCreature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WarShipClient/Models/Square.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WarShipClient/Models/Field.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WarShipClient/Startup.cs" root0="FORCE_HIGHLIGHTING" />
@@ -172,6 +128,9 @@
         <option value="$PROJECT_DIR$/WarShipClient/Startup.cs" />
         <option value="$PROJECT_DIR$/WarShipClient/Models/ComputerField.cs" />
         <option value="$PROJECT_DIR$/WarShipClient/Models/PlayerField.cs" />
+        <option value="$PROJECT_DIR$/WarShipClient/Services/PossiblePointsCreator.cs" />
+        <option value="$PROJECT_DIR$/WarShipClient/Services/PossiblePointsCreature.cs" />
+        <option value="$PROJECT_DIR$/WarShipClient/Services/PointsChecker.cs" />
         <option value="$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs" />
         <option value="$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs" />
       </list>
@@ -183,7 +142,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="106" />
     <option name="y" value="67" />
     <option name="width" value="1918" />
@@ -297,12 +256,12 @@
       <workItem from="1559574288788" duration="2073000" />
       <workItem from="1559645562928" duration="655000" />
       <workItem from="1559801589376" duration="12996000" />
-      <workItem from="1560067916951" duration="3125000" />
+      <workItem from="1560067916951" duration="8160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109616000" />
+    <option name="totallyTimeSpent" value="114651000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,13 +276,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29252437" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29252437" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -344,12 +303,12 @@
       <window_info anchor="right" id="Unit Tests Coverage" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.29252437" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,7 +321,7 @@
       <window_info anchor="bottom" id="REST Client" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.32719395" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.3261105" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -471,21 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WarShipClient/Controllers/ComputerFieldController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding>
-            <marker date="1559925673015" expanded="false" signature="6:59" ph="..." />
-            <marker date="1559925673015" expanded="true" signature="96:816" ph="{...}" />
-            <marker date="1559925673015" expanded="true" signature="243:814" ph="{...}" />
-            <marker date="1559925673015" expanded="true" signature="348:437" ph="{...}" />
-            <marker date="1559925673015" expanded="true" signature="504:562" ph="{...}" />
-            <marker date="1559925673015" expanded="true" signature="656:808" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WarShipClient/Models/ComputerField.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -510,53 +454,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs">
+    <entry file="file://$PROJECT_DIR$/WarShipClient/Controllers/ComputerFieldController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
           <folding>
-            <marker date="1560070786311" expanded="false" signature="6:89" ph="..." />
-            <marker date="1560070786311" expanded="true" signature="126:1448" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="267:1446" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="412:495" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="554:610" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="696:1301" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="1067:1258" ph="{...}" />
-            <marker date="1560070786311" expanded="true" signature="1370:1440" ph="{...}" />
+            <marker date="1559925673015" expanded="true" signature="6:59" ph="..." />
+            <marker date="1559925673015" expanded="true" signature="96:816" ph="{...}" />
+            <marker date="1559925673015" expanded="true" signature="243:814" ph="{...}" />
+            <marker date="1559925673015" expanded="true" signature="348:437" ph="{...}" />
+            <marker date="1559925673015" expanded="true" signature="504:562" ph="{...}" />
+            <marker date="1559925673015" expanded="true" signature="656:808" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WarShipClient/Services/ShipsAligner.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" column="64" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
+        <state relative-caret-position="-137">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <marker date="1559996535155" expanded="false" signature="6:41" ph="..." />
-            <marker date="1559996535155" expanded="true" signature="75:3074" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="107:3072" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="247:329" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="369:711" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="459:701" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="626:687" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="780:957" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1031:1451" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1164:1414" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1252:1355" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1512:1712" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1624:1702" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1764:1869" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1931:2507" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="1983:2148" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2064:2134" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2181:2471" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2290:2457" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2357:2439" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2550:3066" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2600:2754" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2794:3030" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2847:3016" ph="{...}" />
-            <marker date="1559996535155" expanded="true" signature="2916:2998" ph="{...}" />
+            <marker date="1560075438179" expanded="false" signature="6:41" ph="..." />
+            <marker date="1560075438179" expanded="true" signature="75:1394" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="107:1392" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="247:329" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="369:997" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="459:987" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="864:973" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="1051:1202" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="1113:1192" ph="{...}" />
+            <marker date="1560075438179" expanded="true" signature="1254:1359" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WarShipClient/Services/PointsChecker.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <marker date="1560075438202" expanded="true" signature="61:1440" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="94:1438" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="180:227" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="298:874" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="350:515" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="431:501" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="548:838" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="657:824" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="724:806" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="917:1432" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="967:1121" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="1161:1396" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="1214:1382" ph="{...}" />
+            <marker date="1560075438202" expanded="true" signature="1282:1364" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WarShipClient/Services/PossiblePointsCreature.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding>
+            <marker date="1560074226103" expanded="true" signature="61:631" ph="{...}" />
+            <marker date="1560074226103" expanded="true" signature="103:629" ph="{...}" />
+            <marker date="1560074226103" expanded="true" signature="185:362" ph="{...}" />
+            <marker date="1560074226103" expanded="true" signature="423:623" ph="{...}" />
+            <marker date="1560074226103" expanded="true" signature="535:613" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WarShipClient/Controllers/PlayerFieldController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <marker date="1560083831399" expanded="false" signature="6:89" ph="..." />
+            <marker date="1560083831399" expanded="true" signature="126:1284" ph="{...}" />
+            <marker date="1560083831399" expanded="true" signature="267:1282" ph="{...}" />
+            <marker date="1560083831399" expanded="true" signature="400:477" ph="{...}" />
+            <marker date="1560083831399" expanded="true" signature="536:593" ph="{...}" />
+            <marker date="1560083831399" expanded="true" signature="679:1267" ph="{...}" />
+            <marker date="1560083831399" expanded="true" signature="1030:1224" ph="{...}" />
           </folding>
         </state>
       </provider>
