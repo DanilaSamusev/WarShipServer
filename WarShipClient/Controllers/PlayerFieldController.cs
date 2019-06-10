@@ -10,7 +10,7 @@ namespace WarShipClient.Controllers
     public class PlayerFieldController : Controller
     {
         private static Field _playerField;
-        private static int _shipNumber = 0;
+        private static int _shipNumber;
 
         public PlayerFieldController()
         {
@@ -24,11 +24,46 @@ namespace WarShipClient.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateField([FromBody] Square square)
-        {           
-            Square[] squares = new Square[PlayerField.Fleet.Ships[_shipNumber].Decks.Length];
+        public IActionResult UpdateField([FromBody] Square checkedSquare)
+        {
+            Square[] possibleSquares = CheckSquares(checkedSquare);
+
+            return Ok(possibleSquares);
+        }
+
+        [HttpPut("setShip")]
+        
+        public IActionResult HandleClick([FromBody] Square clickedSquare)
+        {
             PossiblePointsCreature creature = new PossiblePointsCreature();
-            int[] points = creature.GetPossiblePoints(PlayerField.Fleet.Ships[_shipNumber], square.Id, 0);
+            Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
+            int[] points = creature.GetPossiblePoints(currentShip, clickedSquare.Id, 0);
+            Square[] squares = new Square[currentShip.Decks.Length];
+            
+            PointsChecker checker = new PointsChecker(_playerField);
+            ShipsAligner aligner = new ShipsAligner(_playerField, PlayerField.Fleet);
+
+            if (checker.CheckPoints(points, 0))
+            {
+                aligner.SetShip(currentShip, points);
+                _shipNumber++;
+            }
+
+            foreach (int point in points)
+            {
+                squares[point] = _playerField.Squares[point];
+            }
+            
+            return Ok(squares);
+        }
+
+        private Square[] CheckSquares(Square checkedSquare)
+        {
+            PossiblePointsCreature creature = new PossiblePointsCreature();
+            Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
+            int[] points = creature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
+
+            Square[] squares = new Square[currentShip.Decks.Length];
 
             for (int i = 0; i < points.Length; i++)
             {
@@ -36,8 +71,7 @@ namespace WarShipClient.Controllers
                 squares[i] = _playerField.Squares[points[i]];
             }
 
-            return Ok(squares);
+            return squares;
         }
-        
     }
 }
