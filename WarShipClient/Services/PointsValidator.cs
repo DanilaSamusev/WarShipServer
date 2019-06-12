@@ -16,8 +16,7 @@ namespace WarShipClient.Services
             int rowNumber = points[0] / 10;
             
             foreach (int point in points)
-            {
-                
+            {              
                 if (point < 0 || point > 99 || !ValidatePoint(point))
                 {
                     return false;
@@ -41,15 +40,34 @@ namespace WarShipClient.Services
 
         public bool ValidatePoint(int point)
         {
-            int[] points =
-            {
+            int[] points = {
                 point - 11, point - 10, point - 9,
                 point - 1, point + 1,
                 point + 9, point + 10, point + 11
             };
-
-            foreach (int i in points)
+            
+            if (point % 10 == 9)
             {
+                points = new []
+                {
+                    point - 11, point - 10,
+                    point - 1,
+                    point + 9, point + 10
+                };    
+            }
+
+            if (point % 10 == 0)
+            {
+                points = new []
+                {
+                    point - 10, point - 9,
+                    point + 1,
+                    point + 10, point + 11
+                };    
+            }
+            
+            foreach (int i in points)
+            {                             
                 if (i >= 0 && i < 100)
                 {
                     if (Field.Squares[i].HasShip)
