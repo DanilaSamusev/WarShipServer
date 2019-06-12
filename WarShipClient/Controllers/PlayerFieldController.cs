@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using WarShipClient.Models;
 using WarShipClient.Services;
@@ -27,26 +25,16 @@ namespace WarShipClient.Controllers
 
         [HttpPut]
         public IActionResult HandleCursorOver([FromBody] Square checkedSquare)
-        {
-            Square[] checkedSquares = SetIsChecked(checkedSquare, true);
-
-            using (StreamWriter writer = new StreamWriter("NewFile1.txt", true))
-            {
-                writer.WriteLine(0);
-            }
+        {                        
+            Square[] checkedSquares = SetIsChecked(checkedSquare, true);         
 
             return Ok(checkedSquares);
         }
 
         [HttpPut("mouseOut")]
         public IActionResult HandleCursorOut([FromBody] Square checkedSquare)
-        {
-            Square[] checkedSquares = SetIsChecked(checkedSquare, false);
-
-            using (StreamWriter writer = new StreamWriter("NewFile1.txt", true))
-            {
-                writer.WriteLine(1);
-            }
+        {           
+            Square[] checkedSquares = SetIsChecked(checkedSquare, false);        
             
             return Ok(checkedSquares);
         }
@@ -68,10 +56,12 @@ namespace WarShipClient.Controllers
                 _shipNumber++;
             }
 
-            foreach (int point in points)
+            for (int i = 0; i < points.Length; i++)
             {
-                squares[point] = Field.Squares[point];
+                squares[i] = Field.Squares[points[i]];
             }
+            
+           
 
             return Ok(squares);
         }
