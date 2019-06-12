@@ -25,18 +25,32 @@ namespace WarShipClient.Controllers
 
         [HttpPut]
         public IActionResult HandleCursorOver([FromBody] Square checkedSquare)
-        {                        
-            Square[] checkedSquares = SetIsChecked(checkedSquare, true);         
+        {
+            PossiblePointsCreature pointsCreature = new PossiblePointsCreature();
+            PointsValidator pointsValidator = new PointsValidator(Field);
+            SquaresManager squaresManager = new SquaresManager();
+            Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
+            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
 
-            return Ok(checkedSquares);
+            if (pointsValidator.ValidatePoints(possiblePoints, 0))
+            {
+                squaresManager.SetIsChecked(Field, possiblePoints, true);                
+            }
+
+            return Ok(squaresManager.GetSquaresByPoints(Field, possiblePoints));
         }
 
         [HttpPut("mouseOut")]
         public IActionResult HandleCursorOut([FromBody] Square checkedSquare)
-        {           
-            Square[] checkedSquares = SetIsChecked(checkedSquare, false);        
-            
-            return Ok(checkedSquares);
+        {
+            PossiblePointsCreature pointsCreature = new PossiblePointsCreature();            
+            SquaresManager squaresManager = new SquaresManager();
+            Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
+            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
+           
+            squaresManager.SetIsChecked(Field, possiblePoints, false);                            
+
+            return Ok(squaresManager.GetSquaresByPoints(Field, possiblePoints));
         }
 
         [HttpPut("setShip")]
@@ -47,10 +61,10 @@ namespace WarShipClient.Controllers
             int[] points = creature.GetPossiblePoints(currentShip, clickedSquare.Id, 0);
             Square[] squares = new Square[currentShip.Decks.Length];
 
-            PointsChecker checker = new PointsChecker(Field);
+            PointsValidator validator = new PointsValidator(Field);
             ShipsAligner aligner = new ShipsAligner(Field, PlayerField.Fleet);
 
-            if (checker.CheckPoints(points, 0))
+            if (validator.ValidatePoints(points, 0))
             {
                 aligner.SetShip(currentShip, points);
                 _shipNumber++;
@@ -60,27 +74,8 @@ namespace WarShipClient.Controllers
             {
                 squares[i] = Field.Squares[points[i]];
             }
-            
-           
 
             return Ok(squares);
-        }
-
-        private Square[] SetIsChecked(Square checkedSquare, bool isChecked)
-        {           
-                PossiblePointsCreature creature = new PossiblePointsCreature();
-                Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-                int[] points = creature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
-
-                Square[] checkedSquares = new Square[currentShip.Decks.Length];
-
-                for (int i = 0; i < points.Length; i++)
-                {
-                    Field.Squares[points[i]].IsChecked = isChecked;
-                    checkedSquares[i] = Field.Squares[points[i]];
-                }
-
-                return checkedSquares;          
         }
     }
 }

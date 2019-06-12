@@ -4,10 +4,10 @@ namespace WarShipClient.Services
 {
     public class PossiblePointsCreature
     {
-        public int[] GetPossiblePoints(Ship ship, int point, int direction)
+        public int[] GetPossiblePoints(Ship ship, int firstPoint, int direction)
         {
             int[] points = new int[ship.Decks.Length];
-            points[0] = point;
+            points[0] = firstPoint;
             FillPoints(points, direction);
 
             return points;
