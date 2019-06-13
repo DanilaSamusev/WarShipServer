@@ -11,6 +11,7 @@ namespace WarShipClient.Controllers
     {
         public static Field Field { get; set; }
         private static int _shipNumber;
+        private static int _shipDirection;
 
         public PlayerFieldController()
         {
@@ -30,9 +31,9 @@ namespace WarShipClient.Controllers
             PointsValidator pointsValidator = new PointsValidator(Field);
             SquaresManager squaresManager = new SquaresManager();
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
+            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, _shipDirection);
 
-            if (pointsValidator.ValidatePoints(possiblePoints, 0))
+            if (pointsValidator.ValidatePoints(possiblePoints, _shipDirection))
             {
                 squaresManager.SetIsChecked(Field, possiblePoints, true);                
             }
@@ -46,7 +47,7 @@ namespace WarShipClient.Controllers
             PossiblePointsCreature pointsCreature = new PossiblePointsCreature();            
             SquaresManager squaresManager = new SquaresManager();
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, 0);
+            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, checkedSquare.Id, _shipDirection);
            
             squaresManager.SetIsChecked(Field, possiblePoints, false);                            
 
@@ -58,7 +59,7 @@ namespace WarShipClient.Controllers
         {
             PossiblePointsCreature creature = new PossiblePointsCreature();
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] points = creature.GetPossiblePoints(currentShip, clickedSquare.Id, 0);
+            int[] points = creature.GetPossiblePoints(currentShip, clickedSquare.Id, _shipDirection);
             Square[] squares = new Square[currentShip.Decks.Length];
 
             PointsValidator validator = new PointsValidator(Field);
@@ -77,5 +78,8 @@ namespace WarShipClient.Controllers
 
             return Ok(squares);
         }
+
+        
+        
     }
 }
