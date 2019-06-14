@@ -24,10 +24,10 @@ namespace WarShipClient.Services
                 int direction = random.Next(2);
 
                 PossiblePointsCreature creature = new PossiblePointsCreature();
-                PointsValidator validator = new PointsValidator(_field);
+                PointsValidator validator = new PointsValidator();
                 int[] points = creature.GetPossiblePoints(_ships[i], point, direction);
 
-                if (validator.ValidatePoints(points, direction))
+                if (validator.ValidatePoints(_field, points, direction))
                 {
                     SetShip(_ships[i], points);
                     i++;

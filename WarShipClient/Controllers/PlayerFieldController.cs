@@ -10,11 +10,17 @@ namespace WarShipClient.Controllers
     public class PlayerFieldController : Controller
     {
         public static Field Field { get; set; }
+        private readonly PossiblePointsCreature _possiblePointsCreature;
+        private readonly PointsValidator _pointsValidator;
+        private readonly SquaresManager _squaresManager;
         private static int _shipNumber;        
 
-        public PlayerFieldController()
+        public PlayerFieldController(PossiblePointsCreature possiblePointsCreature, PointsValidator pointsValidator, SquaresManager squaresManager)
         {
             Field = PlayerField.NewPlayerField();
+            _possiblePointsCreature = possiblePointsCreature;
+            _pointsValidator = pointsValidator;
+            _squaresManager = squaresManager;           
         }
 
         [HttpGet]
@@ -25,46 +31,40 @@ namespace WarShipClient.Controllers
 
         [HttpPut("checkPoints")]
         public IActionResult HandleCursorOver([FromQuery] int id, int direction)
-        {
-            PossiblePointsCreature pointsCreature = new PossiblePointsCreature();
-            PointsValidator pointsValidator = new PointsValidator(Field);
-            SquaresManager squaresManager = new SquaresManager();
+        {            
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, id, direction);
+            int[] possiblePoints = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
 
-            if (pointsValidator.ValidatePoints(possiblePoints, direction))
+            if (_pointsValidator.ValidatePoints(Field, possiblePoints, direction))
             {
-                squaresManager.SetIsChecked(Field, possiblePoints, true);                
+                _squaresManager.SetIsChecked(Field, possiblePoints, true);                
             }
 
-            return Ok(squaresManager.GetSquaresByPoints(Field, possiblePoints));
+            return Ok(_squaresManager.GetSquaresByPoints(Field, possiblePoints));
         }
 
         [HttpPut("mouseOut")]
         public IActionResult HandleCursorOut([FromQuery] int id, int direction)
-        {
-            PossiblePointsCreature pointsCreature = new PossiblePointsCreature();            
-            SquaresManager squaresManager = new SquaresManager();
+        {            
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] possiblePoints = pointsCreature.GetPossiblePoints(currentShip, id, direction);
+            int[] possiblePoints = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
            
-            squaresManager.SetIsChecked(Field, possiblePoints, false);                            
+            _squaresManager.SetIsChecked(Field, possiblePoints, false);                            
 
-            return Ok(squaresManager.GetSquaresByPoints(Field, possiblePoints));
+            return Ok(_squaresManager.GetSquaresByPoints(Field, possiblePoints));
         }
 
         [HttpPut("setShip")]
         public IActionResult HandleClick([FromQuery] int id, int direction)
         {
-            PossiblePointsCreature creature = new PossiblePointsCreature();
+            
             Ship currentShip = PlayerField.Fleet.Ships[_shipNumber];
-            int[] points = creature.GetPossiblePoints(currentShip, id, direction);
+            int[] points = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
             Square[] squares = new Square[currentShip.Decks.Length];
-
-            PointsValidator validator = new PointsValidator(Field);
+            
             ShipsAligner aligner = new ShipsAligner(Field, PlayerField.Fleet);
 
-            if (validator.ValidatePoints(points, 0))
+            if (_pointsValidator.ValidatePoints(Field, points, direction))
             {
                 aligner.SetShip(currentShip, points);
                 _shipNumber++;
@@ -76,9 +76,6 @@ namespace WarShipClient.Controllers
             }
 
             return Ok(squares);
-        }
-
-        
-        
+        }             
     }
 }

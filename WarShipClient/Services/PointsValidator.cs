@@ -3,21 +3,14 @@ using WarShipClient.Models;
 namespace WarShipClient.Services
 {
     public class PointsValidator
-    {
-        private Field Field;
-        
-        public PointsValidator(Field field)
-        {
-            Field = field;
-        } 
-        
-        public bool ValidatePoints(int[] points, int direction)
+    {                            
+        public bool ValidatePoints(Field field, int[] points, int direction)
         {
             int rowNumber = points[0] / 10;
             
             foreach (int point in points)
             {              
-                if (point < 0 || point > 99 || !ValidatePoint(point))
+                if (point < 0 || point > 99 || !ValidatePoint(field, point))
                 {
                     return false;
                 }
@@ -38,7 +31,7 @@ namespace WarShipClient.Services
             return true;
         }
 
-        public bool ValidatePoint(int point)
+        public bool ValidatePoint(Field field, int point)
         {
             int[] points = {
                 point - 11, point - 10, point - 9,
@@ -70,7 +63,7 @@ namespace WarShipClient.Services
             {                             
                 if (i >= 0 && i < 100)
                 {
-                    if (Field.Squares[i].HasShip)
+                    if (field.Squares[i].HasShip)
                     {
                         return false;
                     }
