@@ -9,7 +9,7 @@ namespace WarShipClient.Controllers
     [ApiController]
     public class PlayerFieldController : Controller
     {
-        public static Field Field { get; set; }
+        private static Field Field { get; set; }
         private readonly PossiblePointsCreature _possiblePointsCreature;
         private readonly PointsValidator _pointsValidator;
         private readonly SquaresManager _squaresManager;
