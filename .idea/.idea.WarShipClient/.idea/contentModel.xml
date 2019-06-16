@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="\app" t="IncludeRecursive" />
-    <e p="\b185c17c" t="IncludeRecursive" />
-    <e p="C:\Users\abook\.Rider2018.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\abook\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\abook\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\abook\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_WarShipClient.-92563453.00" t="ExcludeRecursive" />
-    <e p="D:\MyWorks\WarShipApp\WarShipClient" t="IncludeFlat">
+    <e p="C:\Users\Danik\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Danik\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WarShipClient.351337221.00" t="ExcludeRecursive" />
+    <e p="F:\MyWorks\WarShipApp\WarShipClient" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WarShipClient" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />

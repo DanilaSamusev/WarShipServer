@@ -8,24 +8,24 @@ namespace WarShipClient.Controllers
     [ApiController]
     public class ComputerFieldController : Controller
     {
-        public static Field Field { get; set; }
+        public static Field ComputerField { get; set; }
 
         public ComputerFieldController()
         {
-            Field = ComputerField.NewComputerField();
+            ComputerField = Models.ComputerField.NewComputerField();
         }
         
         [HttpGet]
         public IActionResult GetSquares()
         {
-            return Ok(Field.Squares);
+            return Ok(ComputerField.Squares);
         }
         
         [HttpPut]
-        public IActionResult HandleClick([FromBody] Square square)
+        public IActionResult HandleClick([FromQuery] int id)
         {
-            Field.Squares[square.Id].IsClicked = true;            
-            return Ok(Field.Squares[square.Id]);
+            ComputerField.Squares[id].IsClicked = true;            
+            return Ok(ComputerField.Squares[id]);
         }
     }
 }

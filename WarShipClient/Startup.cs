@@ -42,7 +42,6 @@ namespace WarShipClient
             }
 
             app.UseCors("CorsPolicy");
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
