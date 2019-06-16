@@ -35,6 +35,7 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
+          <e p="PointsManager.cs" t="Include" />
           <e p="PointsValidator.cs" t="Include" />
           <e p="PossiblePointsCreature.cs" t="Include" />
           <e p="ShipsAligner.cs" t="Include" />
