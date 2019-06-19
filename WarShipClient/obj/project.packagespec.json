@@ -6,6 +6,9 @@
     "projectPath": "F:\\MyWorks\\WarShipApp\\WarShipClient\\WarShipClient\\WarShipClient.csproj",
     "outputPath": "F:\\MyWorks\\WarShipApp\\WarShipClient\\WarShipClient\\obj\\",
     "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
     "originalTargetFrameworks": [
       "netcoreapp2.2"
     ],
