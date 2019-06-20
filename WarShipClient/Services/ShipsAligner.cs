@@ -18,7 +18,7 @@ namespace WarShipClient.Services
         {
             Random random = new Random();
 
-            for (int i = 0; i < 10;)
+            for (int i = 9; i >= 0;)
             {
                 int point = random.Next(100);
                 int direction = random.Next(2);
@@ -30,7 +30,7 @@ namespace WarShipClient.Services
                 if (validator.ValidatePoints(_field, points, direction))
                 {
                     SetShip(_ships[i], points);
-                    i++;
+                    i--;
                 }
             }
         }

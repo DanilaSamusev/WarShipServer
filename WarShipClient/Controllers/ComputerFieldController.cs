@@ -12,6 +12,7 @@ namespace WarShipClient.Controllers
 
         public ComputerFieldController()
         {
+            
             ComputerField = Models.ComputerField.NewComputerField();
         }
         
@@ -24,6 +25,8 @@ namespace WarShipClient.Controllers
         [HttpPut]
         public IActionResult HandleClick([FromQuery] int id)
         {
+            if (!PlayerField.PlayerShipsArePlanted) return Ok();
+            
             ComputerField.Squares[id].IsClicked = true;            
             return Ok(ComputerField.Squares[id]);
         }

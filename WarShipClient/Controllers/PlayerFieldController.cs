@@ -14,7 +14,7 @@ namespace WarShipClient.Controllers
         private readonly PointsValidator _pointsValidator;
         private readonly SquaresManager _squaresManager;
         private readonly PointsManager _pointsManager;
-        private static int _shipNumber;
+        private static int _currentShipNumber;
         private static int[] _previousPoints;
 
         public PlayerFieldController(PossiblePointsCreature possiblePointsCreature, PointsValidator pointsValidator,
@@ -36,20 +36,19 @@ namespace WarShipClient.Controllers
         [HttpPut("checkPoints")]
         public IActionResult HandleCursorOver([FromQuery] int id, int direction)
         {
-            int[] changedPoints; 
-            
             if (_previousPoints != null)
             {
                 _squaresManager.SetIsChecked(PlayerField, _previousPoints, false);
             }
 
-            Ship currentShip = Models.PlayerField.Fleet.Ships[_shipNumber];
+            Ship currentShip = Models.PlayerField.Fleet.Ships[_currentShipNumber];
             int[] possiblePoints = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
 
             if (_pointsValidator.ValidatePoints(PlayerField, possiblePoints, direction))
             {
                 _squaresManager.SetIsChecked(PlayerField, possiblePoints, true);
 
+                int[] changedPoints;
                 if (_previousPoints == null)
                 {
                     changedPoints = possiblePoints;
@@ -67,29 +66,39 @@ namespace WarShipClient.Controllers
             return Ok(_squaresManager.GetSquaresByPoints(PlayerField, _previousPoints));
         }
 
-        
-
-        [HttpPut("lendShip")]
+        [HttpPut("plantShip")]
         public IActionResult HandleClick([FromQuery] int id, int direction)
         {
-            Ship currentShip = Models.PlayerField.Fleet.Ships[_shipNumber];
+            if (_currentShipNumber >= 10)
+            {
+                return Ok();
+            }
+            
+            Ship currentShip = Models.PlayerField.Fleet.Ships[_currentShipNumber];
             int[] points = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
             Square[] squares = new Square[currentShip.Decks.Length];
 
             ShipsAligner aligner = new ShipsAligner(PlayerField, Models.PlayerField.Fleet);
-
+            
             if (_pointsValidator.ValidatePoints(PlayerField, points, direction))
             {
                 aligner.SetShip(currentShip, points);
-                _shipNumber++;
+                _currentShipNumber++;
+                
+                if (_currentShipNumber == 10)
+                {
+                    Models.PlayerField.PlayerShipsArePlanted = true;
+                }
+                
+                for (int i = 0; i < points.Length; i++)
+                {
+                    squares[i] = PlayerField.Squares[points[i]];
+                }
+                
+                return Ok(squares);
             }
 
-            for (int i = 0; i < points.Length; i++)
-            {
-                squares[i] = PlayerField.Squares[points[i]];
-            }
-
-            return Ok(squares);
+            return Ok();
         }
     }
 }

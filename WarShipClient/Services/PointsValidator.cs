@@ -35,7 +35,7 @@ namespace WarShipClient.Services
         {
             int[] points = {
                 point - 11, point - 10, point - 9,
-                point - 1, point + 1,
+                point - 1, point, point + 1,
                 point + 9, point + 10, point + 11
             };
             
@@ -44,7 +44,7 @@ namespace WarShipClient.Services
                 points = new []
                 {
                     point - 11, point - 10,
-                    point - 1,
+                    point - 1, point,
                     point + 9, point + 10
                 };    
             }
@@ -54,7 +54,7 @@ namespace WarShipClient.Services
                 points = new []
                 {
                     point - 10, point - 9,
-                    point + 1,
+                    point + 1, point,
                     point + 10, point + 11
                 };    
             }

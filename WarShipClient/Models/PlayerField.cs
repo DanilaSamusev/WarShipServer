@@ -4,6 +4,7 @@ namespace WarShipClient.Models
     {
         private static PlayerField _field;
         public static Fleet Fleet { get; set; }
+        public static bool PlayerShipsArePlanted { get; set; }
 
         public static PlayerField NewPlayerField()
         {
@@ -11,6 +12,7 @@ namespace WarShipClient.Models
             
             Fleet = new Fleet();
             _field = new PlayerField();
+            PlayerShipsArePlanted = false;
             
             return _field;
         }        
