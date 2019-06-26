@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WarShipClient.Models;
+using WarShipClient.Services;
 
 namespace WarShipClient.Controllers
 {    
@@ -9,24 +10,24 @@ namespace WarShipClient.Controllers
     public class ComputerFieldController : Controller
     {
         public static Field ComputerField { get; set; }
+        private readonly ShipsAligner _shipsAligner;
 
-        public ComputerFieldController()
+        public ComputerFieldController(ShipsAligner shipsAligner)
         {
-            
-            ComputerField = Models.ComputerField.NewComputerField();
+            _shipsAligner = shipsAligner;
         }
         
         [HttpGet]
-        public IActionResult GetSquares()
+        public IActionResult GetFieldData()
         {
-            return Ok(ComputerField.Squares);
+            ComputerField = new Field();
+            _shipsAligner.AlignShipsRandom(ComputerField);
+            return Ok(ComputerField.Squares); 
         }
         
-        [HttpPut]
-        public IActionResult HandleClick([FromQuery] int id)
+        [HttpPut("makeShot")]
+        public IActionResult MakeShot([FromQuery] int id)
         {
-            if (!PlayerField.PlayerShipsArePlanted) return Ok();
-            
             ComputerField.Squares[id].IsClicked = true;            
             return Ok(ComputerField.Squares[id]);
         }

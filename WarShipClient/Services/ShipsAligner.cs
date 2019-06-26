@@ -5,16 +5,7 @@ namespace WarShipClient.Services
 {
     public class ShipsAligner
     {
-        private readonly Field _field;
-        private readonly Ship[] _ships;
-
-        public ShipsAligner(Field field, Fleet fleet)
-        {
-            _field = field;
-            _ships = fleet.Ships;
-        }
-
-        public void AlignShipsRandom()
+        public void AlignShipsRandom(Field field)
         {
             Random random = new Random();
 
@@ -25,28 +16,29 @@ namespace WarShipClient.Services
 
                 PossiblePointsCreature creature = new PossiblePointsCreature();
                 PointsValidator validator = new PointsValidator();
-                int[] points = creature.GetPossiblePoints(_ships[i], point, direction);
+                int[] points = creature.GetPossiblePoints(field.Fleet.Ships[i], point, direction);
 
-                if (validator.ValidatePoints(_field, points, direction))
+                if (validator.ValidatePoints(field, points, direction))
                 {
-                    SetShip(_ships[i], points);
+                    SetShip(field.Fleet.Ships[i], points, field);
+                    field.Fleet.ShipsOnField++;
                     i--;
                 }
             }
         }
 
-        public void SetShip(Ship ship, int[] points)
+        public void SetShip(Ship ship, int[] points, Field field)
         {
             for (int i = 0; i < points.Length; i++)
             {
-                SetDeck(ship.Decks[i], points[i]);
+                SetDeck(ship.Decks[i], points[i], field);
             }
         }
 
-        private void SetDeck(Deck deck, int point)
+        private void SetDeck(Deck deck, int point, Field field)
         {
             deck.Position = point;
-            _field.Squares[point].HasShip = true;
+            field.Squares[point].HasShip = true;
         }
         
         

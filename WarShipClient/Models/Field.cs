@@ -3,10 +3,11 @@ namespace WarShipClient.Models
     public class Field
     {
         public Square[] Squares { get; set; }
-
+        public Fleet Fleet { get; set; }
         public Field()
         {
             Squares = CreateSquares();
+            Fleet = new Fleet();
         }
 
         private Square[] CreateSquares()

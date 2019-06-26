@@ -4,8 +4,7 @@ namespace WarShipClient.Models
 {
     public class Fleet
     {
-        public string Condition { get; set; }
-        public int LiveDecksCount { get; set; }
+        public int ShipsOnField { get; set; }
         public Ship[] Ships { get; set; }       
                 
         public Fleet()
@@ -22,9 +21,9 @@ namespace WarShipClient.Models
                 new Ship(3),
                 new Ship(3),
                 new Ship(4)
-            };            
-            LiveDecksCount = 4;
-            Condition = "Alive";            
+            };
+
+            ShipsOnField = 0;
         }
         
         

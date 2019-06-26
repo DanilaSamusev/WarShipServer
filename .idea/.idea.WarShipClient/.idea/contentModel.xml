@@ -14,11 +14,9 @@
           <e p="PlayerFieldController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="ComputerField.cs" t="Include" />
           <e p="Deck.cs" t="Include" />
           <e p="Field.cs" t="Include" />
           <e p="Fleet.cs" t="Include" />
-          <e p="PlayerField.cs" t="Include" />
           <e p="Ship.cs" t="Include" />
           <e p="Square.cs" t="Include" />
         </e>
