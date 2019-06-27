@@ -37,9 +37,14 @@ namespace WarShipClient.Controllers
             return Ok(PlayerField.Squares);
         }
 
-        [HttpPut("markSquaresForShip")]
-        public IActionResult MarkSquaresForShip([FromQuery] int id, int direction)
+        [HttpPut("markSquaresForShipPlanting")]
+        public IActionResult MarkSquaresForShipPlanting([FromQuery] int id, int direction)
         {
+            if (PlayerField.Fleet.ShipsOnField == 10)
+            {
+                return Ok();
+            }
+            
             if (_previousPoints != null)
             {
                 _squaresManager.SetIsChecked(PlayerField, _previousPoints, false);
@@ -71,9 +76,9 @@ namespace WarShipClient.Controllers
         }
         
         [HttpPut("plantShip")]
-        public IActionResult HandleClick([FromQuery] int id, int direction)
+        public IActionResult PlantShip([FromQuery] int id, int direction)
         {
-            if (_currentShipNumber >= 10)
+            if (PlayerField.Fleet.ShipsOnField == 10)
             {
                 return Ok();
             }
@@ -86,7 +91,7 @@ namespace WarShipClient.Controllers
             
             if (_pointsValidator.ValidatePoints(PlayerField, points, direction))
             {
-                aligner.SetShip(currentShip, points, PlayerField);
+                aligner.PlantShip(currentShip, points, PlayerField);
                 _currentShipNumber++;
                 
                 for (int i = 0; i < points.Length; i++)

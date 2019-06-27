@@ -13,7 +13,7 @@ namespace WarShipClient.Services
             return points;
         }
 
-        public void FillPoints(int[] points, int direction)
+        private void FillPoints(int[] points, int direction)
         {
             int step = direction == 0 ? 1 : -10;
 

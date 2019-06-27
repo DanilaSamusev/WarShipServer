@@ -5,7 +5,7 @@ namespace WarShipClient.Services
 {
     public class ShipsAligner
     {
-        public void AlignShipsRandom(Field field)
+        public void PlantShipsRandom(Field field)
         {
             Random random = new Random();
 
@@ -20,22 +20,22 @@ namespace WarShipClient.Services
 
                 if (validator.ValidatePoints(field, points, direction))
                 {
-                    SetShip(field.Fleet.Ships[i], points, field);
+                    PlantShip(field.Fleet.Ships[i], points, field);
                     field.Fleet.ShipsOnField++;
                     i--;
                 }
             }
         }
 
-        public void SetShip(Ship ship, int[] points, Field field)
+        public void PlantShip(Ship ship, int[] points, Field field)
         {
             for (int i = 0; i < points.Length; i++)
             {
-                SetDeck(ship.Decks[i], points[i], field);
+                PlantDeck(ship.Decks[i], points[i], field);
             }
         }
 
-        private void SetDeck(Deck deck, int point, Field field)
+        private void PlantDeck(Deck deck, int point, Field field)
         {
             deck.Position = point;
             field.Squares[point].HasShip = true;
