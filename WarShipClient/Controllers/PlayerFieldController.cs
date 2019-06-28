@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using WarShipClient.Models;
 using WarShipClient.Services;
@@ -33,7 +34,7 @@ namespace WarShipClient.Controllers
             {
                 PlayerField = new Field();
             }
-            
+
             return Ok(PlayerField.Squares);
         }
 
@@ -44,7 +45,7 @@ namespace WarShipClient.Controllers
             {
                 return Ok();
             }
-            
+
             if (_previousPoints != null)
             {
                 _squaresManager.SetIsChecked(PlayerField, _previousPoints, false);
@@ -74,7 +75,7 @@ namespace WarShipClient.Controllers
 
             return Ok(_squaresManager.GetSquaresByPoints(PlayerField, _previousPoints));
         }
-        
+
         [HttpPut("plantShip")]
         public IActionResult PlantShip([FromQuery] int id, int direction)
         {
@@ -82,23 +83,23 @@ namespace WarShipClient.Controllers
             {
                 return Ok();
             }
-            
+
             Ship currentShip = PlayerField.Fleet.Ships[_currentShipNumber];
             int[] points = _possiblePointsCreature.GetPossiblePoints(currentShip, id, direction);
             Square[] squares = new Square[currentShip.Decks.Length];
 
             ShipsAligner aligner = new ShipsAligner();
-            
+
             if (_pointsValidator.ValidatePoints(PlayerField, points, direction))
             {
                 aligner.PlantShip(currentShip, points, PlayerField);
                 _currentShipNumber++;
-                
+
                 for (int i = 0; i < points.Length; i++)
                 {
                     squares[i] = PlayerField.Squares[points[i]];
                 }
-                
+
                 return Ok(squares);
             }
 
@@ -106,10 +107,20 @@ namespace WarShipClient.Controllers
         }
 
         [HttpPut("makeShot")]
-        public IActionResult MakeShot(int id)
+        public IActionResult MakeShot()
         {
-            PlayerField.Squares[id].IsClicked = true;            
-            return Ok(PlayerField.Squares[id]);
+            Random random = new Random();
+            int id;
+
+            do
+            {
+                
+                id = random.Next(100);
+                
+            } while (PlayerField.Squares[id].IsClicked);
+
+            PlayerField.Squares[id].IsClicked = true;
+            return Ok(new[] {PlayerField.Squares[id]});
         }
     }
 }

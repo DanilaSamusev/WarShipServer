@@ -29,8 +29,8 @@ namespace WarShipClient.Controllers
             return Ok(ComputerField.Squares);
         }
 
-        [HttpPut("makeShot")]
-        public IActionResult MakeShot([FromQuery] int id)
+        [HttpPut("makePlayerShot")]
+        public IActionResult MakePlayerShot([FromQuery] int id)
         {
             ComputerField.Squares[id].IsClicked = true;
             return Ok(ComputerField.Squares[id]);
