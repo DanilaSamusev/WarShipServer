@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using WarShipClient.Models;
 using WarShipClient.Services;
@@ -9,31 +10,32 @@ namespace WarShipClient.Controllers
     [ApiController]
     public class ComputerFieldController : Controller
     {
-        public static Field ComputerField { get; set; }
-        private readonly ShipsAligner _shipsAligner;
+        private readonly Game _game;
 
-        public ComputerFieldController(ShipsAligner shipsAligner)
+        public ComputerFieldController(Game game)
         {
-            _shipsAligner = shipsAligner;
+            _game = game;
         }
 
         [HttpGet]
         public IActionResult GetFieldData()
         {
-            if (ComputerField == null)
+            Field computerField = _game.ComputerField;
+
+            if (computerField != null)
             {
-                ComputerField = new Field();
-                _shipsAligner.PlantShipsRandom(ComputerField);
+                return Ok(computerField.Squares);
             }
 
-            return Ok(ComputerField.Squares);
+            return NotFound("Computer field is not found");
         }
 
         [HttpPut("makePlayerShot")]
-        public IActionResult MakePlayerShot([FromQuery] int id)
+        public IActionResult MakeShooting([FromQuery] int id)
         {
-            ComputerField.Squares[id].IsClicked = true;
-            return Ok(ComputerField.Squares[id]);
+            return Ok(_game.MakeShooting(id));
         }
+
+        
     }
 }

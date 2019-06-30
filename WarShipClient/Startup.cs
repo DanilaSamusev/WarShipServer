@@ -27,6 +27,7 @@ namespace WarShipClient
             services.AddSingleton<PossiblePointsCreature>();
             services.AddSingleton<SquaresManager>();
             services.AddSingleton<PointsManager>();
+            services.AddSingleton<Game>();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials(); }));
         }
