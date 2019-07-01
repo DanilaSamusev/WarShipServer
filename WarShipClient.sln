@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarShipClient", "WarShipClient\WarShipClient.csproj", "{E09B28B1-C535-4B8C-A655-DBD528185AC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarShipServer", "WarShipServer\WarShipServer.csproj", "{E09B28B1-C535-4B8C-A655-DBD528185AC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
