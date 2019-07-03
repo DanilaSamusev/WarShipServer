@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using WarShipServer.Models;
 using WarShipServer.Services;
@@ -110,5 +111,20 @@ namespace WarShipServer.Controllers
             return Ok();
         }
 
+        [HttpPut("computerShot")]
+        public IActionResult MakeComputerShot()
+        {
+            Random random = new Random();
+            int id;
+
+            do
+            {
+                id = random.Next(100);
+            } while (_game.PlayerField.Squares[id].IsClicked);
+
+            _game.PlayerField.Squares[id].IsClicked = true;
+
+            return Ok(_game.PlayerField.Squares[id]);
+        }
     }
 }

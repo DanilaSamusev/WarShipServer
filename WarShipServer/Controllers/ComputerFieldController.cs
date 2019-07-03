@@ -29,15 +29,17 @@ namespace WarShipServer.Controllers
             return NotFound("Computer field is not found");
         }
 
-        [HttpPut("makePlayerShot")]
-        public IActionResult MakeShooting([FromQuery] int id)
+        [HttpPut("playerShot")]
+        public IActionResult MakePlayerShot([FromQuery] int id)
         {
             /*if (!_game.IsPlayerTurn || _game.PlayerField.Fleet.ShipsOnField != 10)
             {
                 return Ok();
             }*/
-            Square[][] shotSquares= _game.MakeShooting(id);
-            return Ok(shotSquares);
+
+            _game.ComputerField.Squares[id].IsClicked = true;
+            
+            return Ok(_game.ComputerField.Squares[id]);
         }
 
         

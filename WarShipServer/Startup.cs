@@ -28,7 +28,6 @@ namespace WarShipServer
             services.AddSingleton<SquaresManager>();
             services.AddSingleton<PointsManager>();
             services.AddSingleton<Game>();
-            services.AddSingleton<ShootingManager>();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials(); }));
         }
