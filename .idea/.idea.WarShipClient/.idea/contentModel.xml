@@ -12,6 +12,7 @@
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="ComputerFieldController.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
           <e p="PlayerFieldController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

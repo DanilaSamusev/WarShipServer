@@ -1,6 +1,6 @@
-using WarShipServer.Models;
+using WarShipServer.Services;
 
-namespace WarShipServer.Services
+namespace WarShipServer.Models
 {
     public class Game
     {
