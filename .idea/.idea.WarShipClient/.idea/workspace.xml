@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="231d3d6a-8c1e-4bfa-848e-dd5331a78bc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WarShipClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/Controllers/ComputerFieldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/Controllers/ComputerFieldController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/Controllers/PlayerFieldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/Controllers/PlayerFieldController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/Services/ShootingManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/bin/Debug/netcoreapp2.2/WarShipServer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WarShipServer/obj/Debug/netcoreapp2.2/WarShipServer.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WarShipServer/Controllers/PlayerFieldController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+            <state relative-caret-position="1853">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <marker date="1562077620379" expanded="true" signature="6:103" ph="..." />
                 <marker date="1562077620379" expanded="true" signature="140:4312" ph="{...}" />
@@ -48,17 +35,6 @@
                 <marker date="1562077620379" expanded="true" signature="3457:3855" ph="{...}" />
                 <marker date="1562077620379" expanded="true" signature="3641:3748" ph="{...}" />
                 <marker date="1562077620379" expanded="true" signature="3974:4304" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Downloads/ProductService.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <folding>
-                <element signature="e#0#193#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -319,7 +295,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290092000" />
+    <option name="totallyTimeSpent" value="292396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -331,14 +307,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3192964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48507464" visible="true" weight="0.3300866" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48400852" visible="true" weight="0.3300866" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48667377" weight="0.27056277" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -350,8 +326,8 @@
       <window_info anchor="bottom" id="Unit Tests" order="11" />
       <window_info anchor="bottom" id="REST Client" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49946696" weight="0.32883817" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.51492536" side_tool="true" visible="true" weight="0.3300866" />
-      <window_info anchor="bottom" id="Build" order="15" sideWeight="0.47334754" weight="0.32467532" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.51599145" side_tool="true" visible="true" weight="0.3300866" />
+      <window_info anchor="bottom" id="Build" order="15" sideWeight="0.47228146" weight="0.32467532" />
       <window_info anchor="bottom" id="Performance Profiler" order="16" weight="0.32987553" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -653,10 +629,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/ProductService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WarShipServer/Controllers/PlayerFieldController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+        <state relative-caret-position="1853">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
           <folding>
             <marker date="1562077620379" expanded="true" signature="6:103" ph="..." />
             <marker date="1562077620379" expanded="true" signature="140:4312" ph="{...}" />
@@ -675,15 +661,6 @@
             <marker date="1562077620379" expanded="true" signature="3457:3855" ph="{...}" />
             <marker date="1562077620379" expanded="true" signature="3641:3748" ph="{...}" />
             <marker date="1562077620379" expanded="true" signature="3974:4304" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/ProductService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <folding>
-            <element signature="e#0#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
