@@ -24,7 +24,6 @@ namespace WarShipServer
             services.AddSingleton<Fleet>();
             services.AddSingleton<ShipsAligner>();
             services.AddSingleton<PointsValidator>();
-            services.AddSingleton<PossiblePointsCreature>();
             services.AddSingleton<SquaresManager>();
             services.AddSingleton<PointsManager>();
             services.AddSingleton<Game>();

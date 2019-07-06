@@ -14,9 +14,9 @@ namespace WarShipServer.Services
                 int point = random.Next(100);
                 int direction = random.Next(2);
 
-                PossiblePointsCreature creature = new PossiblePointsCreature();
+                PointsManager pointsManager = new PointsManager();
                 PointsValidator validator = new PointsValidator();
-                int[] points = creature.GetPossiblePoints(field.Fleet.Ships[i], point, direction);
+                int[] points = pointsManager.GetSquaresNumbersForShipPlanting(field.Fleet.Ships[i], point, direction);
 
                 if (validator.ValidatePoints(field, points, direction))
                 {

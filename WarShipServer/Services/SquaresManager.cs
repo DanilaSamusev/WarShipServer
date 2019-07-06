@@ -35,10 +35,10 @@ namespace WarShipServer.Services
 
             LastCheckedSquaresNumbers = requiredSquaresNumbers;
 
-           return GetSquaresByPoints(field, changedSquaresNumbers);
+           return GetSquaresByNumbers(field, changedSquaresNumbers);
         }
         
-        public Square[] GetSquaresByPoints(Field field, int[] requiredPoints)
+        public Square[] GetSquaresByNumbers(Field field, int[] requiredPoints)
         {
             Square[] requiredSquares = new Square[requiredPoints.Length];
 
