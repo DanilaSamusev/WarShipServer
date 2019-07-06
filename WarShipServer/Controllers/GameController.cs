@@ -9,15 +9,20 @@ namespace WarShipServer.Controllers
     
     public class GameController : Controller
     {
-        [HttpGet]
-        public IActionResult GetGameData(Game game)
+        private readonly GameData _gameData;
+
+        public GameController(Game game)
         {
-            if (game == null)
+            if (_gameData == null)
             {
-                return NotFound();
+                _gameData = new GameData(game);
             }
-            
-            return Ok(game);
+        }
+        
+        [HttpGet]
+        public IActionResult GetGameData()
+        {
+            return Ok(_gameData);
         }
     }
 }

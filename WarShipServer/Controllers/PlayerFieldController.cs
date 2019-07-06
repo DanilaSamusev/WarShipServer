@@ -124,6 +124,11 @@ namespace WarShipServer.Controllers
 
             _game.PlayerField.Squares[id].IsClicked = true;
 
+            if (!_game.PlayerField.Squares[id].HasShip)
+            {
+                _game.IsPlayerTurn = true;
+            }
+            
             return Ok(_game.PlayerField.Squares[id]);
         }
     }
