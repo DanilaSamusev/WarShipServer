@@ -12,22 +12,12 @@ namespace WarShipServer.Controllers
 
         public ComputerFieldController(Game game)
         {
-            _game = game;
-        }
-
-        [HttpGet]
-        public IActionResult GetFieldData()
-        {
-            Field computerField = _game.ComputerField;
-
-            if (computerField != null)
+            if (_game == null)
             {
-                return Ok(computerField.Squares);
+                _game = game;
             }
-
-            return NotFound("Computer field is not found");
         }
-
+        
         [HttpPut("playerShot")]
         public IActionResult MakePlayerShot([FromQuery] int id)
         {
