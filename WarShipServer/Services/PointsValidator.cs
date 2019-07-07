@@ -63,7 +63,7 @@ namespace WarShipServer.Services
             {                             
                 if (i >= 0 && i < 100)
                 {
-                    if (field.Squares[i].HasShip)
+                    if (field.Squares[i].ShipNumber > -1)
                     {
                         return false;
                     }

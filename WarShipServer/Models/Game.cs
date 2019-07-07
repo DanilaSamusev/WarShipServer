@@ -6,6 +6,8 @@ namespace WarShipServer.Models
     {
         public Field PlayerField { get; set; }
         public Field ComputerField { get; set; }
+        public Fleet PlayerFleet { get; set; }
+        public Fleet ComputerFleet { get; set; }
         public bool IsPlayerTurn { get; set; }
         
 
@@ -13,7 +15,9 @@ namespace WarShipServer.Models
         {
             PlayerField = new Field();
             ComputerField = new Field();
-            shipsAligner.PlantShipsRandom(ComputerField);
+            PlayerFleet = new Fleet();
+            ComputerFleet = new Fleet();
+            shipsAligner.PlantShipsRandom(ComputerField, ComputerFleet);
             IsPlayerTurn = true;
         }
 
