@@ -2,31 +2,33 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Danik\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Danik\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WarShipClient.351337221.00" t="ExcludeRecursive" />
-    <e p="F:\MyWorks\WarShipApp\WarShipClient" t="IncludeFlat">
+    <e p="C:\Users\Danik\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WarShipClient.-710849248.00" t="ExcludeRecursive" />
+    <e p="F:\MyWorks\C#\WarShipServer" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
-      <e p="WarShipClient" t="IncludeRecursive">
+      <e p="WarShipClient.sln" t="IncludeFlat" />
+      <e p="WarShipServer" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="ComputerFieldController.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
           <e p="PlayerFieldController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="ComputerField.cs" t="Include" />
           <e p="Deck.cs" t="Include" />
+          <e p="Direction.cs" t="Include" />
           <e p="Field.cs" t="Include" />
           <e p="Fleet.cs" t="Include" />
-          <e p="PlayerField.cs" t="Include" />
+          <e p="Game.cs" t="Include" />
+          <e p="GameData.cs" t="Include" />
           <e p="Ship.cs" t="Include" />
           <e p="Square.cs" t="Include" />
         </e>
-        <e p="NewFile1.txt" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
-              <e p="WarShipClient.AssemblyInfo.cs" t="Include" />
+              <e p="WarShipServer.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -37,14 +39,13 @@
         <e p="Services" t="Include">
           <e p="PointsManager.cs" t="Include" />
           <e p="PointsValidator.cs" t="Include" />
-          <e p="PossiblePointsCreature.cs" t="Include" />
           <e p="ShipsAligner.cs" t="Include" />
+          <e p="ShootingManager.cs" t="Include" />
           <e p="SquaresManager.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
-        <e p="WarShipClient.csproj" t="IncludeRecursive" />
+        <e p="WarShipServer.csproj" t="IncludeRecursive" />
       </e>
-      <e p="WarShipClient.sln" t="IncludeFlat" />
     </e>
   </component>
 </project>
