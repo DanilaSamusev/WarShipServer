@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Danik\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Danik\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WarShipClient.-1126316396.00" t="ExcludeRecursive" />
-    <e p="F:\MyWorks\C#\WarShipDotNetServer" t="IncludeFlat">
+    <e p="C:\Users\Danik\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WarShipClient.-710849248.00" t="ExcludeRecursive" />
+    <e p="F:\MyWorks\C#\WarShipServer" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WarShipClient.sln" t="IncludeFlat" />
       <e p="WarShipServer" t="IncludeRecursive">
