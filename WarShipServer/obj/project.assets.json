@@ -12163,11 +12163,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MyWorks\\WarShipApp\\WarShipClient\\WarShipServer\\WarShipServer.csproj",
+      "projectUniqueName": "F:\\MyWorks\\C#\\WarShipDotNetServer\\WarShipServer\\WarShipServer.csproj",
       "projectName": "WarShipServer",
-      "projectPath": "F:\\MyWorks\\WarShipApp\\WarShipClient\\WarShipServer\\WarShipServer.csproj",
+      "projectPath": "F:\\MyWorks\\C#\\WarShipDotNetServer\\WarShipServer\\WarShipServer.csproj",
       "packagesPath": "C:\\Users\\Danik\\.nuget\\packages\\",
-      "outputPath": "F:\\MyWorks\\WarShipApp\\WarShipClient\\WarShipServer\\obj\\",
+      "outputPath": "F:\\MyWorks\\C#\\WarShipDotNetServer\\WarShipServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
