@@ -20,6 +20,7 @@ namespace WarShipServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSession();
             services.AddSingleton<Field>();            
             services.AddSingleton<Fleet>();
             services.AddSingleton<ShipsAligner>();
@@ -27,7 +28,6 @@ namespace WarShipServer
             services.AddSingleton<SquaresManager>();
             services.AddSingleton<PointsManager>();
             services.AddSingleton<Game>();
-            services.AddSingleton<ShootingManager>();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => { builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials(); }));
         }
@@ -43,6 +43,7 @@ namespace WarShipServer
                 app.UseHsts();
             }
 
+            app.UseSession();
             app.UseCors("CorsPolicy");
             app.UseMvc();
         }

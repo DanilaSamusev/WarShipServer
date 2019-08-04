@@ -1,11 +1,9 @@
-using WarShipServer.Services;
-
 namespace WarShipServer.Models
 {
     public class Fleet
     {
-        public int ShipsOnField { get; set; }
         public Ship[] Ships { get; set; }
+        public int DeadShipsCount { get; set; }
 
         public Fleet()
         {
@@ -23,7 +21,7 @@ namespace WarShipServer.Models
                 new Ship(4, 9)
             };
 
-            ShipsOnField = 0;
+            DeadShipsCount = 0;
         }
     }
 }

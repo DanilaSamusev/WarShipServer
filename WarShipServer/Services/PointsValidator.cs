@@ -4,7 +4,7 @@ namespace WarShipServer.Services
 {
     public class PointsValidator
     {                            
-        public bool ValidatePoints(Field field, int[] points, int direction)
+        public bool ValidatePoints(Field field, int[] points, Direction direction)
         {
             int rowNumber = points[0] / 10;
             
@@ -16,7 +16,7 @@ namespace WarShipServer.Services
                 }
             }
 
-            if (direction == 0)
+            if (direction == Direction.Horizontally)
             {
                 foreach (int point in points)
                 {

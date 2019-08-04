@@ -13,7 +13,6 @@
         <e p="Controllers" t="Include">
           <e p="ComputerFieldController.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
-          <e p="PlayerFieldController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Deck.cs" t="Include" />
@@ -40,7 +39,6 @@
           <e p="PointsManager.cs" t="Include" />
           <e p="PointsValidator.cs" t="Include" />
           <e p="ShipsAligner.cs" t="Include" />
-          <e p="ShootingManager.cs" t="Include" />
           <e p="SquaresManager.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />

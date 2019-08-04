@@ -5,14 +5,14 @@ namespace WarShipServer.Models
         public Deck[] Decks { get; set; }
         public int Id { get; set; }
         public bool IsAlive { get; set; }
-        private int hitsNumber;
+        private int _hitsNumber;
         public int HitsNumber
         {
-            get => hitsNumber;
+            get => _hitsNumber;
             set
             {
-                hitsNumber = value;
-                if (hitsNumber == Decks.Length)
+                _hitsNumber = value;
+                if (_hitsNumber == Decks.Length)
                 {
                     IsAlive = false;
                 }

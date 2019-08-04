@@ -4,7 +4,7 @@ namespace WarShipServer.Services
 {
     public class PointsManager
     {
-        public int[] GetSquaresNumbersForShipPlanting(Ship ship, int firstPoint, int direction)
+        public int[] GetSquaresNumbersForShipPlanting(Ship ship, int firstPoint, Direction direction)
         {
             int[] points = new int[ship.Decks.Length];
             points[0] = firstPoint;
@@ -22,9 +22,9 @@ namespace WarShipServer.Services
             return changedPoints;
         }
         
-        private void FillRequiredPoints(int[] points, int direction)
+        private void FillRequiredPoints(int[] points, Direction direction)
         {
-            int step = direction == 0 ? 1 : -10;
+            int step = direction == Direction.Horizontally ? 1 : -10;
 
             for (int j = 1; j < points.Length; j++)
             {

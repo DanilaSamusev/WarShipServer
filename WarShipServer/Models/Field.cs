@@ -3,9 +3,12 @@ namespace WarShipServer.Models
     public class Field
     {
         public Square[] Squares { get; set; }
+        
+        public int ShipsOnField { get; set; }
         public Field()
         {
             Squares = CreateSquares();
+            ShipsOnField = 0;
         }
 
         private Square[] CreateSquares()

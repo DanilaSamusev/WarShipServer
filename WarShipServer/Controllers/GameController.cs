@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WarShipServer.Models;
+using WarShipServer.Services;
 
 namespace WarShipServer.Controllers
 {
@@ -9,20 +10,10 @@ namespace WarShipServer.Controllers
     
     public class GameController : Controller
     {
-        private readonly GameData _gameData;
-
-        public GameController(Game game)
-        {
-            if (_gameData == null)
-            {
-                _gameData = new GameData(game);
-            }
-        }
-        
         [HttpGet]
         public IActionResult GetGameData()
         {
-            return Ok(_gameData);
+            return Ok(new Game(new ShipsAligner()));
         }
     }
 }

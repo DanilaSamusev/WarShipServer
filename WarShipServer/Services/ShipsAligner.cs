@@ -12,7 +12,8 @@ namespace WarShipServer.Services
             for (int i = 9; i >= 0;)
             {
                 int point = random.Next(100);
-                int direction = random.Next(2);
+                int directionNumber = random.Next(2);
+                Direction direction = (Direction)directionNumber;
 
                 PointsManager pointsManager = new PointsManager();
                 PointsValidator validator = new PointsValidator();
@@ -21,7 +22,7 @@ namespace WarShipServer.Services
                 if (validator.ValidatePoints(field, points, direction))
                 {
                     PlantShip(fleet.Ships[i], points, field);
-                    fleet.ShipsOnField++;
+                    field.ShipsOnField++;
                     i--;
                 }
             }
