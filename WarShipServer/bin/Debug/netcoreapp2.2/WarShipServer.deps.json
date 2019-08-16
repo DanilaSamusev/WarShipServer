@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "5750984c6470b5e61485b09712ac5951650b1930"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "WarShipServer/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.SignalR.Core": "2.4.1",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0"
@@ -33,6 +34,17 @@
         },
         "compile": {
           "WarShipServer.dll": {}
+        }
+      },
+      "Microsoft.AspNet.SignalR.Core/2.4.1": {
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.19093"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3236,6 +3248,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNet.SignalR.Core/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jFKQDdaSksg0xkN6pO5Wl4wno1qOwaKBp3UikT+8hXFIL7Mr2vZMmSlQVB9TN7HXZetQ4bzps0wfkoFcUXkp4g==",
+      "path": "microsoft.aspnet.signalr.core/2.4.1",
+      "hashPath": "microsoft.aspnet.signalr.core.2.4.1.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
