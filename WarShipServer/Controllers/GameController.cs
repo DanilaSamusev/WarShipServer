@@ -11,43 +11,43 @@ namespace WarShipServer.Controllers
     public class GameController : Controller
     {
         private readonly ShipsAligner _shipsAligner;
-        private static GameData[] _gameData;
+        private static readonly GameData _gameData = new GameData();
+
         public GameController(ShipsAligner shipsAligner)
         {
             _shipsAligner = shipsAligner;
-            
         }
 
         [HttpGet("single")]
         public IActionResult GetSinglePlayerData()
         {
-            GameData gameData = new GameData(0, 1, true,
-                false, true);
+            _gameData.PlayerId = 1;
+            _gameData.EnemyId = 0;
+            _gameData.GameType = "Single player";
+            _shipsAligner.PlantShipsRandom(_gameData.Boards[0].Field, _gameData.Boards[0].Fleet);
+            _gameData.Players[0].IsPlayerReady = true;
 
-            _shipsAligner.PlantShipsRandom(gameData.Boards[1].Field, gameData.Boards[1].Fleet);
-            
-            return Ok(gameData);
+            return Ok(_gameData);
         }
 
         [HttpGet("multi")]
         public IActionResult GetMultiPlayerData()
         {
-
-            if (_gameData == null)
-            {
-
-                _gameData = new[]
-                {
-                    new GameData(0, 1, true, false, false),
-                    new GameData(1, 0, false, false, false)
-                };
-            }
-
-            var gameData = _gameData[0].IsFree ? _gameData[0] : _gameData[1];
-
-            gameData.IsFree = false;
             
-            return Ok(gameData);
+            if (_gameData.Players[0].IsSitFree)
+            {
+                _gameData.PlayerId = 0;
+                _gameData.Players[0].IsSitFree = false;
+                _gameData.EnemyId = 1;
+            }
+            else
+            {
+                _gameData.PlayerId = 1;
+                _gameData.Players[1].IsSitFree = false;
+                _gameData.EnemyId = 0;
+            }
+            
+            return Ok(_gameData);
         }
     }
 }

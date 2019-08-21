@@ -20,6 +20,7 @@
           <e p="Field.cs" t="Include" />
           <e p="Fleet.cs" t="Include" />
           <e p="GameData.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="Ship.cs" t="Include" />
           <e p="Square.cs" t="Include" />
         </e>
