@@ -21,13 +21,11 @@ namespace WarShipServer.Controllers
         [HttpGet("single")]
         public IActionResult GetSinglePlayerData()
         {
-            _gameData.PlayerId = 1;
-            _gameData.EnemyId = 0;
-            _gameData.GameType = "Single player";
-            _shipsAligner.PlantShipsRandom(_gameData.Boards[0].Field, _gameData.Boards[0].Fleet);
-            _gameData.Players[0].IsPlayerReady = true;
+            GameData gameData = new GameData {PlayerId = 1, EnemyId = 0, GameType = "Single player"};
+            _shipsAligner.PlantShipsRandom(gameData.Boards[0].Field, gameData.Boards[0].Fleet);
+            gameData.Players[0].IsPlayerReady = true;
 
-            return Ok(_gameData);
+            return Ok(gameData);
         }
 
         [HttpGet("multi")]
