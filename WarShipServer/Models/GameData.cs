@@ -2,17 +2,25 @@ namespace WarShipServer.Models
 {
     public class GameData
     {
-        public Square[] PlayerSquares { get; set; }
-        public Square[] ComputerSquares { get; set; }
-        public bool IsPlayerTurn { get; set; }
-        
+        public Board[] Boards { get; set; }
+        public Player[] Players { get; set; }
+        public string GameType { get; set; }
+        public int PlayerId { get; set; }
+        public int EnemyId { get; set; }
 
-        public GameData(Game game)
+        public GameData()
         {
-            PlayerSquares = game.PlayerField.Squares;
-            ComputerSquares = game.ComputerField.Squares;
-            IsPlayerTurn = game.IsPlayerTurn;
+            Boards = new[]
+            {
+                new Board(0),
+                new Board(1)
+            };
 
+            Players = new[]
+            {
+                new Player(false),
+                new Player(true)
+            };
         }
     }
 }
