@@ -7,6 +7,7 @@ namespace WarShipServer.Models
         public string GameType { get; set; }
         public int PlayerId { get; set; }
         public int EnemyId { get; set; }
+        public string Events { get; set; }
 
         public GameData()
         {
@@ -21,6 +22,8 @@ namespace WarShipServer.Models
                 new Player(false),
                 new Player(true)
             };
+
+            Events = "";
         }
     }
 }

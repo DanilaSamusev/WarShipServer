@@ -11,41 +11,42 @@ namespace WarShipServer.Controllers
     public class GameController : Controller
     {
         private readonly ShipsAligner _shipsAligner;
-        private static readonly GameData _gameData = new GameData();
+        private static readonly GameData GameData = new GameData();
 
         public GameController(ShipsAligner shipsAligner)
         {
             _shipsAligner = shipsAligner;
         }
 
-        [HttpGet("single")]
+        [HttpGet("singlePlayer")]
         public IActionResult GetSinglePlayerData()
         {
             GameData gameData = new GameData {PlayerId = 1, EnemyId = 0, GameType = "Single player"};
             _shipsAligner.PlantShipsRandom(gameData.Boards[0].Field, gameData.Boards[0].Fleet);
             gameData.Players[0].IsPlayerReady = true;
+            gameData.Players[0].Name = "Computer";
 
             return Ok(gameData);
         }
 
-        [HttpGet("multi")]
+        [HttpGet("multiPlayer")]
         public IActionResult GetMultiPlayerData()
         {
             
-            if (_gameData.Players[0].IsSitFree)
+            if (GameData.Players[0].IsSitFree)
             {
-                _gameData.PlayerId = 0;
-                _gameData.Players[0].IsSitFree = false;
-                _gameData.EnemyId = 1;
+                GameData.PlayerId = 0;
+                GameData.Players[0].IsSitFree = false;
+                GameData.EnemyId = 1;
             }
             else
             {
-                _gameData.PlayerId = 1;
-                _gameData.Players[1].IsSitFree = false;
-                _gameData.EnemyId = 0;
+                GameData.PlayerId = 1;
+                GameData.Players[1].IsSitFree = false;
+                GameData.EnemyId = 0;
             }
             
-            return Ok(_gameData);
+            return Ok(GameData);
         }
     }
 }
