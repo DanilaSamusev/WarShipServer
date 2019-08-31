@@ -11,5 +11,11 @@ namespace WarShipServer.Services
         {
             await Clients.All.SendAsync("Send", gameData);
         }
+
+        public async Task LogPlayer(Player player)
+        {
+
+            await Clients.Others.SendAsync("LogPlayer", player);
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace WarShipServer
             services.AddSingleton<PointsValidator>();
             services.AddSingleton<SquaresManager>();
             services.AddSingleton<PointsManager>();
+            services.AddSingleton<GameHub>();
             
             services.AddCors(options => options.AddPolicy("CorsPolicy",
                 builder => { builder.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000").AllowCredentials(); }));
